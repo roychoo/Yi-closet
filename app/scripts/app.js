@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('YiClosetApp', [])
+angular.module('YiClosetApp', ['services'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -10,4 +10,8 @@ angular.module('YiClosetApp', [])
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .config(function(indexeddbServiceProvider){
+    //indexeddbServiceProvider.init();
+    console.log(indexeddbServiceProvider.setName('hello'));
   });

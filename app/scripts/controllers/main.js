@@ -7,4 +7,5 @@ angular.module('YiClosetApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.test = 'asd';
   });
