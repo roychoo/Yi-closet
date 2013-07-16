@@ -35,14 +35,17 @@
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
-
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="scripts/lib/jquery.dynatree-1.2.4.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/directives/jqtree.js"></script>
-    <script src="scripts/services/indexeddb.js"></script>
+    <script src="bower_components/angular-indexedDB/src/indexeddb.js"></script>
     <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->

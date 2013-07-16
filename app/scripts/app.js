@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('YiClosetApp', ['services'])
+angular.module('YiClosetApp', ['xc.indexedDB'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -11,7 +11,12 @@ angular.module('YiClosetApp', ['services'])
         redirectTo: '/'
       });
   })
-  .config(function(indexeddbServiceProvider){
-    //indexeddbServiceProvider.init();
-    console.log(indexeddbServiceProvider.setName('hello'));
+  .config(function($indexedDBProvider){
+    $indexedDBProvider
+      .connection('myIndexedDB')
+      .upgradeDatabase('1', function(event, db, tx){
+        var objStore = db.createObjectStore('people', {keypath: 'ssn'});
+        objStore.createIndex('name_idx', 'name', {unique: false});
+        objStore.createIndex('age_idx', 'age', {unique: false});
+      });
   });
